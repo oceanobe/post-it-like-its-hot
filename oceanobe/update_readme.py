@@ -59,16 +59,16 @@ def update_readme():
     new_posts = fetch_latest_blog_posts()
 
     # Define Blog Posts section
-    blog_section_header = "## Blog Posts\n"
+    blog_section_header = "## Latest Blog Posts\n"
     new_blog_section = blog_section_header + "\n".join(new_posts) + "\n"
 
-    # Check if README already has a "## Blog Posts" section
+    # Check if README already has a "## Latest Blog Posts" section
     if blog_section_header in readme_text:
         # Replace existing Blog Posts section
         before, _ = readme_text.split(blog_section_header, 1)
         updated_readme = before + new_blog_section
     else:
-        # Append the Blog Posts section at the end
+        # Append the Latest Blog Posts section at the end
         updated_readme = readme_text.strip() + "\n\n" + new_blog_section
 
     # Commit changes only if the README actually changed
